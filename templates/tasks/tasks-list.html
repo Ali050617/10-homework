@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tasks List</title>
+    <link rel="stylesheet" href="{% static 'css/tasks-list.css' %}">
+</head>
+<body>
+    <h1>Tasks List</h1>
+    <button><a href="{% url 'tasks:create' %}">Create Tasks</a></button>
+    <br>
+    <button><a href="{% url 'home' %}">Back to home</a></button>
+    {% for tasks in tasks %}
+        <a href="{{ tasks.get_detail_url }}">
+            <h3>{{ tasks.task_title }}</h3>
+            <p>{{ tasks.due_date | date:"Y.m.d"}}</p>
+        </a>
+        <br><br>
+    {% empty %}
+        <h3>No tasks</h3>
+    {% endfor %}
+
+</body>
+</html>

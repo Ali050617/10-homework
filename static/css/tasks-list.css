@@ -1,0 +1,48 @@
+body {
+    background-color: #e0f7fa;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    color: #003366;
+}
+
+.task-list {
+    margin-top: 20px;
+}
+
+.task-item {
+    display: block;
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+.create-task-link {
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 10px 15px;
+    background-color: #4caf50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.create-task-link:hover {
+    background-color: #388e3c;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 15px;
+    background-color: #f44336;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.back-link:hover {
+    background-color: #c62828;
+}

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+</head>
+<body>
+    <h1>Welcome to the Home Page</h1>
+    <a href="{% url 'notes:list' %}"><h3>Notes List</h3></a>
+    <a href="{% url 'tasks:list' %}"><h3>Tasks List</h3></a>
+</body>
+</html>

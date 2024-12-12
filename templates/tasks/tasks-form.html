@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Task</title>
+    <link rel="stylesheet" href="{% static 'css/tasks-form.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Create Task</h1>
+        <form method="post">
+            {% csrf_token %}
+            <button><a href="{% url 'tasks:list' %}">Back to list</a></button>
+            <br>
+            <label for="task_title">Task Title</label><br>
+            <input type="text" id="task_title" name="task_title" required><br>
+
+            <label for="due_date">Due Date</label><br>
+            <input type="date" id="due_date" name="due_date" required><br>
+
+            <label for="description">Description</label><br>
+            <textarea id="description" name="description" required></textarea><br>
+        {% if tasks %}
+            <button type="submit">Update</button>
+            <button><a href="{{ tasks.get_detail_url }}">Back to detail</a></button>
+        {% else %}
+            <button type="submit">Create Tasks</button>
+
+        {% endif %}
+        </form>
+    </div>
+
+</body>
+</html>
